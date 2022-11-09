@@ -8,9 +8,11 @@ function validateForm() {
     let second_name = document.forms['myForm']['second_name'].value
     let email = document.forms['myForm']['email']. value
     let passwd1 = document.forms['myForm']['passwd1'].value
-    let passwd2 = document.forms['myForm']['passwd2'].value 
-    var rad=document.getElementsByName('gender');
-    let gender = fun1()
+    let passwd2 = document.forms['myForm']['passwd2'].value ;
+    let gender 
+
+    
+
     
     console.log(name, second_name, email, passwd1, gender)
     if(!name){
@@ -34,9 +36,13 @@ function validateForm() {
     if (passwd1 != passwd2 && (passwd1 != '' || passwd1 != 'underfiend')) {
         alert('пароли не совпадают')
     }
+    gender=fun1();
     if(!gender){
         document.getElementById('gender_error').style.display = 'block'
     }
+    
+
+
     let request = new XMLHttpRequest
     request.open('POST', 'server.php')
     request.setRequestHeader("Content-type", "application/json;charset=UTF-8")
@@ -68,10 +74,8 @@ document.getElementById('myForm').onsubmit = () => {
 function fun1() {
     var rad=document.getElementsByName('gender');
     for (var i=0;i<rad.length; i++) {
-      if (rad[i].value==='man') {
-        return 'man';
-      } else{
-        return 'woman'
+      if (rad[i].checked) {
+        return rad[i].value;
       }
     }
   }
