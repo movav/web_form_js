@@ -14,7 +14,7 @@ function validateForm() {
     
 
     
-    console.log(name, second_name, email, passwd1, gender)
+    
     if(!name){
         document.getElementById('name_error').style.display = 'block'
     }
@@ -41,7 +41,7 @@ function validateForm() {
         document.getElementById('gender_error').style.display = 'block'
     }
     
-
+    console.log(name, second_name, email, passwd1, gender)
 
     let request = new XMLHttpRequest
     request.open('POST', 'server.php')
