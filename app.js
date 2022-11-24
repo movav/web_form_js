@@ -67,4 +67,13 @@ function validateEmail(email){
     let re = /\S+@\S+\.\S+/
     return re.test(email)
 }
+function fun1() {
+    var rad=document.getElementsByName('gender');
+    for (var i=0;i<rad.length; i++) {
+      if (rad[i].checked) {
+        return rad[i].value;
+      }
+    }
+  }
+
 
