@@ -68,14 +68,3 @@ function validateEmail(email){
     return re.test(email)
 }
 
-document.getElementById('myForm').onsubmit = () => {
-    return validateForm();
-}
-function fun1() {
-    var rad=document.getElementsByName('gender');
-    for (var i=0;i<rad.length; i++) {
-      if (rad[i].checked) {
-        return rad[i].value;
-      }
-    }
-  }
